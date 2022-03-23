@@ -11,3 +11,17 @@ Projects studying and practicing with javafx
 ## Project 2:
 - **stock-client**
 - Java Client to consume stock-service
+
+## Project 3:
+- **stock-ui**
+- JavaFX front-end for the stock prices application
+### Steps:
+- create a new springboot app wihtout adding dependencies
+- add the javaFX dependency:
+```
+<dependency>
+	<groupId>org.openjfx</groupId>
+	<artifactId>javafx-graphics</artifactId>
+	<version>13</version>
+</dependency>
+```
