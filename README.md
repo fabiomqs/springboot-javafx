@@ -15,6 +15,9 @@ Projects studying and practicing with javafx
 ## Project 3:
 - **stock-ui**
 - JavaFX front-end for the stock prices application
+- Added the client of Project 2
+- uses lombok
+- load the fxml as event oriented
 ### Steps:
 - create a new springboot app wihtout adding dependencies
 - add the javaFX dependency:
@@ -22,6 +25,12 @@ Projects studying and practicing with javafx
 <dependency>
 	<groupId>org.openjfx</groupId>
 	<artifactId>javafx-graphics</artifactId>
-	<version>13</version>
+	<version>18</version>
+</dependency>
+
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-fxml</artifactId>
+    <version>18</version>
 </dependency>
 ```
