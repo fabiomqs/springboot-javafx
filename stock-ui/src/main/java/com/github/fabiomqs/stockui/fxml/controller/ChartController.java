@@ -8,10 +8,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
+import javafx.scene.chart.XYChart.Data;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Consumer;
+
+import static java.lang.String.valueOf;
+import static javafx.collections.FXCollections.observableArrayList;
 
 @Component
 public class ChartController implements Consumer<StockPrice> {
@@ -19,7 +23,7 @@ public class ChartController implements Consumer<StockPrice> {
     @FXML
     private LineChart<String, Double> chart;
     private WebClientStockClient webClientStockClient;
-    private ObservableList<XYChart.Data<String, Double>> seriesData = FXCollections.observableArrayList();
+    private ObservableList<Data<String, Double>> seriesData = observableArrayList();
 
     public ChartController(WebClientStockClient webClientStockClient) {
         this.webClientStockClient = webClientStockClient;
@@ -27,16 +31,21 @@ public class ChartController implements Consumer<StockPrice> {
 
     @FXML
     public void initialize() {
-        ObservableList<XYChart.Series<String, Double>> data = FXCollections.observableArrayList();
-        data.add(new XYChart.Series<>(seriesData));
+        String symbol = "SYMBOL";
+        ObservableList<Series<String, Double>> data = observableArrayList();
+        data.add(new Series<>(symbol, seriesData));
         chart.setData(data);
-        webClientStockClient.pricesFor("SYMBOL").subscribe(this);
+
+        webClientStockClient.pricesFor(symbol).subscribe(this);
     }
 
     @Override
     public void accept(StockPrice stockPrice) {
+        // the accept method run on a different thred
+        // listening to events from the back-end
+        // so we add the Platform.runLater(() ->
         Platform.runLater(() ->
-                seriesData.add(new XYChart.Data<>(String.valueOf(stockPrice.getTime().getSecond()),
+                seriesData.add(new Data<>(valueOf(stockPrice.getTime().getSecond()),
                         stockPrice.getPrice()))
         );
     }
