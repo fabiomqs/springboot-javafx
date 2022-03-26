@@ -34,3 +34,43 @@ Projects studying and practicing with javafx
     <version>18</version>
 </dependency>
 ```
+# Samples
+## Sample 1:
+- **sample1**
+- Stage
+- maven project
+-Issue #1
+
+### pom:
+
+```
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <javafx.version>17.0.1</javafx.version>
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>${javafx.maven.plugin.version}</version>
+        <configuration>
+          <mainClass>HelloFX</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+```
+- Note that transitive dependencies are automatically resolved (for instance, there is no need to add a dependency for the javafx.graphics module, since it is transitively resolved by the javafx.controls module). But if your application is using FXML, you will need to add a dependency for the javafx.fxml module as well.
+
+- mvn clean javafx:run
