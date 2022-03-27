@@ -33,7 +33,8 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>${javafx.maven.plugin.version}</version>
 				<configuration>
-					<mainClass>com.github.fabiomqs.sample.StageApplication</mainClass>
+<!--					<mainClass>com.github.fabiomqs.sample.StageApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.ButtonApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

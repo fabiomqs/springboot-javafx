@@ -38,8 +38,9 @@ Projects studying and practicing with javafx
 ## Sample 1:
 - **sample1**
 - Stage
+- Button
 - maven project
--Issue #1
+-Issues #1, #2, #3
 
 ### pom:
 
