@@ -34,7 +34,8 @@
 				<version>${javafx.maven.plugin.version}</version>
 				<configuration>
 <!--					<mainClass>com.github.fabiomqs.sample.StageApplication</mainClass>-->
-					<mainClass>com.github.fabiomqs.sample.ButtonApplication</mainClass>
+<!--					<mainClass>com.github.fabiomqs.sample.ButtonApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.LayoutApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
