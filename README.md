@@ -39,8 +39,11 @@ Projects studying and practicing with javafx
 - **sample1**
 - Stage
 - Button
-- maven project
--Issues #1, #2, #3
+- Layout
+- Canvas
+- Issues #1, #2, #3, #4
+- as maven project
+
 
 ### pom:
 
