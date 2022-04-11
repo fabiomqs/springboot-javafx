@@ -41,7 +41,9 @@ Projects studying and practicing with javafx
 - Button
 - Layout
 - Canvas
-- Issues #1, #2, #3, #4
+- Draggable Nodes
+- LoginApp
+- Issues #1, #2, #3, #4, #5, #6
 - as maven project
 
 
