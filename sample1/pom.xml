@@ -38,9 +38,8 @@
 <!--					<mainClass>com.github.fabiomqs.sample.LayoutApplication</mainClass>-->
 <!--					<mainClass>com.github.fabiomqs.sample.CanvasApplication</mainClass>-->
 <!--					<mainClass>com.github.fabiomqs.sample.DraggableApplication</mainClass>-->
-					<mainClass>com.github.fabiomqs.sample.LoginApplication</mainClass>
-
-
+<!--					<mainClass>com.github.fabiomqs.sample.LoginApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.VectorFieldApplication</mainClass>
 				</configuration>
 
 			</plugin>

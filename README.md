@@ -43,7 +43,8 @@ Projects studying and practicing with javafx
 - Canvas
 - Draggable Nodes
 - LoginApp
-- Issues #1, #2, #3, #4, #5, #6
+- Vector Fields
+- Issues #1, #2, #3, #4, #5, #6, #7
 - as maven project
 
 
