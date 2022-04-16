@@ -34,7 +34,11 @@ public class UndoApplication extends Application {
         var btnAdd = new Button("Add");
         btnAdd.setFont(Font.font(22));
         btnAdd.setOnAction(e -> {
-            run(new AddText(field.getText(), root));
+            var action = new AddText(field.getText(), root);
+            run(action);
+            action.uiText.setOnMouseClicked(event ->
+                    run(new RemoveText(root, action.uiText))
+            );
         });
         var btnUndo = new Button("Undo");
         btnUndo.setFont(Font.font(22));
@@ -50,15 +54,14 @@ public class UndoApplication extends Application {
 
     private void undo() {
         if(history.isEmpty()) return;
-        //UIAction action =
         history.removeLast().undo();
-        //action.undo();
     }
 
     class AddText implements UIAction {
 
         String text;
         Pane root;
+
         Text uiText;
 
         public AddText(String text, Pane root) {
@@ -76,6 +79,27 @@ public class UndoApplication extends Application {
         @Override
         public void undo() {
             root.getChildren().remove(uiText);
+        }
+    }
+
+    class RemoveText implements UIAction {
+
+        Pane root;
+        Text uiText;
+
+        public RemoveText(Pane root, Text uiText) {
+            this.root = root;
+            this.uiText = uiText;
+        }
+
+        @Override
+        public void run() {
+            root.getChildren().remove(uiText);
+        }
+
+        @Override
+        public void undo() {
+            root.getChildren().add(uiText);
         }
     }
 
