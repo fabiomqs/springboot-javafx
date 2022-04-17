@@ -35,7 +35,8 @@
 				<configuration>
 					<!--<mainClass>com.github.fabiomqs.sample.InputValidationApplication</mainClass>-->
 					<!--<mainClass>com.github.fabiomqs.sample.UndoApplication</mainClass>-->
-					<mainClass>com.github.fabiomqs.sample.DirectoryBrowserApplication</mainClass>
+					<!--<mainClass>com.github.fabiomqs.sample.DirectoryBrowserApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.GraphicalDirectoryBrowserApplication</mainClass>
 
 
 				</configuration>
