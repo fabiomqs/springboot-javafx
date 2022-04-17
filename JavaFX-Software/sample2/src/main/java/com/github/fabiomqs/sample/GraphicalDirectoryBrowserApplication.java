@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -39,7 +40,7 @@ public class GraphicalDirectoryBrowserApplication extends Application {
 
     private void setContents(Path dir) {
         hBox.getChildren().clear();
-        
+
         if(Paths.get(dir.toAbsolutePath().toString()).getParent() != null) {
             createDirectoryView(
                     Paths.get(dir.toAbsolutePath().toString()).getParent(),
@@ -70,14 +71,43 @@ public class GraphicalDirectoryBrowserApplication extends Application {
         Path directory;
 
         public DirectoryView(Path directory, String name) {
+
             setSpacing(5);
             setAlignment(Pos.TOP_CENTER);
             this.directory = directory;
             Text text = new Text(name);
             text.setFont(Font.font(24));
-            Rectangle rectangle = new Rectangle(75,50, Color.LIGHTYELLOW);
-            rectangle.setStroke(Color.BLACK);
-            getChildren().addAll(rectangle, text);
+
+//            Rectangle rectangle = new Rectangle(75,50, Color.LIGHTYELLOW);
+//            rectangle.setStroke(Color.BLACK);
+            Polygon polygon = new Polygon();
+            polygon.getPoints().addAll(new Double[]{
+                    0.0, 10.0,
+                    0.0, 0.0,
+                    25.0, 0.0,
+                    32.5, 10.0,
+                    75.0, 10.0,
+                    75.0, 50.0,
+                    0.0, 50.0,
+
+            });
+            polygon.setFill(Color.web("0xFFA000"));
+            polygon.setStroke(Color.BLACK);
+
+            Polygon polygon2 = new Polygon();
+            polygon2.getPoints().addAll(new Double[]{
+                    15.0, 10.0,
+                    90.0, 10.0,
+                    75.0, 50.0,
+                    0.0, 50.0,
+
+            });
+            polygon2.setFill(Color.web("0xFFCA28"));
+            polygon2.setStroke(Color.BLACK);
+            var stackPane = new StackPane(polygon, polygon2);
+            stackPane.setAlignment(Pos.BOTTOM_LEFT);
+//            getChildren().addAll(rectangle, text);
+            getChildren().addAll(stackPane, text);
         }
     }
 
