@@ -9,8 +9,8 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>12</maven.compiler.source>
-		<maven.compiler.target>12</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javafx.version>18</javafx.version>
 		<javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
@@ -36,7 +36,8 @@
 					<!--<mainClass>com.github.fabiomqs.sample.InputValidationApplication</mainClass>-->
 					<!--<mainClass>com.github.fabiomqs.sample.UndoApplication</mainClass>-->
 					<!--<mainClass>com.github.fabiomqs.sample.DirectoryBrowserApplication</mainClass>-->
-					<mainClass>com.github.fabiomqs.sample.GraphicalDirectoryBrowserApplication</mainClass>
+					<!--<mainClass>com.github.fabiomqs.sample.GraphicalDirectoryBrowserApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.TableViewApplication</mainClass>
 <!--					<mainClass>com.github.fabiomqs.sample.PolygonExample</mainClass>-->
 
 
