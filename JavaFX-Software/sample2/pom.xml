@@ -37,7 +37,8 @@
 					<!--<mainClass>com.github.fabiomqs.sample.UndoApplication</mainClass>-->
 					<!--<mainClass>com.github.fabiomqs.sample.DirectoryBrowserApplication</mainClass>-->
 					<!--<mainClass>com.github.fabiomqs.sample.GraphicalDirectoryBrowserApplication</mainClass>-->
-					<mainClass>com.github.fabiomqs.sample.TableViewApplication</mainClass>
+					<!--<mainClass>com.github.fabiomqs.sample.TableViewApplication</mainClass>-->
+					<mainClass>com.github.fabiomqs.sample.LetterAnimationApplication</mainClass>
 <!--					<mainClass>com.github.fabiomqs.sample.PolygonExample</mainClass>-->
 
 
